@@ -1,0 +1,104 @@
+:root {
+  --primary-text-color: #757575;
+  --title-text-color: #212121;
+  --accent-color: #2196f3;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--primary-text-color);
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.03em;
+  font-size: 14px;
+  box-sizing: border-box;
+
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration-line: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+$breakpoints: (
+  'pre-pre-little': (
+    max-width: 390px,
+  ),
+  'pre-little': (
+    max-width: 479px,
+  ),
+  'little': (
+    min-width: 480px,
+  ),
+  'small': (
+    min-width: 576px,
+  ),
+  'pre-medium': (
+    max-width: 767px,
+  ),
+  'medium': (
+    min-width: 768px,
+  ),
+  'pre-large': (
+    max-width: 1199px,
+  ),
+  'large': (
+    min-width: 1200px,
+  ),
+) !default;
+
+@mixin respondTo($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from #{$breakpoint}. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

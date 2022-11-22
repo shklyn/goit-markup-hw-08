@@ -1,0 +1,110 @@
+.modal-form {
+  &__title {
+    color: #212121;
+    font-size: 20px;
+    letter-spacing: 0.03em;
+    text-align: center;
+  }
+
+  &__contact {
+    margin-top: 12px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+  }
+
+  &__input-wrap {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+    padding: 14px 35px;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+      border: 1px solid var(--accent-color);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    fill: #212121;
+    cursor: text;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .modal-form__input:focus + & {
+      fill: var(--accent-color);
+      transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    resize: none;
+    outline: none;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 20px;
+
+    &:focus {
+      border: 1px solid var(--accent-color);
+    }
+  }
+
+  &__terms-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    @include respondTo('little') {
+      flex-direction: row;
+    }
+  }
+
+  &__terms-label {
+    display: flex;
+    gap: 7px;
+    font-size: 12px;
+    line-height: 14px;
+    @include respondTo('large') {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  &__terms-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 12px;
+    line-height: 14px;
+    position: absolute;
+    bottom: 148px;
+    left: 122px;
+    @include respondTo('little') {
+      position: static;
+    }
+    @include respondTo('large') {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.logo {
+  font-family: Raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: calc(31 / 26);
+  padding: 16px 0;
+  color: var(--accent-color);
+  letter-spacing: 0.03em;
+  padding: 16px 0;
+
+  @include respondTo('medium') {
+    padding: 24px 0;
+  }
+
+  &__wrap {
+    margin-right: 93px;
+    @include respondTo('medium') {
+      margin-right: 75px;
+    }
+    @include respondTo('large') {
+      margin-right: 93px;
+    }
+  }
+
+  &__header {
+    color: #000000;
+  }
+}

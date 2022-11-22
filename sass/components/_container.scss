@@ -1,0 +1,14 @@
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @include respondTo('little') {
+    width: 480px;
+  }
+  @include respondTo('medium') {
+    width: 768px;
+  }
+  @include respondTo('large') {
+    width: 1200px;
+  }
+}
